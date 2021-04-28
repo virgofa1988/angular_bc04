@@ -1,0 +1,22 @@
+<!-- InterPolation Method to binding data -->
+<div class="container mx-5 bg-dark text-white" style="height: 100vh">
+  <p>Name : {{ fullName }}</p>
+  <p>Age : {{ age }}</p>
+  <!-- property binding -->
+  <!-- <input type="text" [value]="email" /> -->
+  <br />
+  <img class="w-50 my-5" [src]="logo" alt="angular" />
+  <br />
+  <!-- event binding -->
+  <button (click)="showMessage('Hello')" class="btn btn-primary">
+    Show message
+  </button>
+  <br />
+  <input type="text" [(ngModel)]="email" />
+  <br />
+  {{ email }}
+  <br />
+  <button (click)="increaseAges()">Increase Ages</button>
+</div>
+
+b4-form
