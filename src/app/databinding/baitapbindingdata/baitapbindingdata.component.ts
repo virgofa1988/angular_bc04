@@ -9,7 +9,6 @@ export class BaitapbindingdataComponent implements OnInit {
 
   fullName = "Enter Full Name";
   email="Enter Email"
-  fullNameInput = "Nguoi Dung Input" 
   constructor() { }
 
   ngOnInit(): void {

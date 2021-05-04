@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-7">
+      <h4>Danh Sách Ghế</h4>
+      <div class="row">
+        <div class="col-3" *ngFor="let seat of seatList">
+          <app-seat-item
+            [seatitem]="seat"
+            (selectedSeat)="setSelectedSeat($event)"
+          ></app-seat-item>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <h4>Danh sách ghế đã đặt</h4>
+      <p *ngFor="let seat of bookingList">
+        Ghế: {{ seat.TenGhe }} Price : {{ seat.Gia }}
+        <span class="text-danger ml-3" (click)="deleteSeat(seat.SoGhe)"
+          >Huỷ</span
+        >
+      </p>
+    </div>
+  </div>
+</div>
