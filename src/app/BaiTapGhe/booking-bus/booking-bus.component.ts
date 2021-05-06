@@ -14,7 +14,7 @@ export class BookingBusComponent implements OnInit {
   ]
   selectedSeat :Seat;
 
-  @ViewChildren(SeatItemComponent) lsSeatItem: QueryList<SeatItemComponent>;
+  @ViewChildren(SeatItemComponent) lsSeatItem: QueryList<SeatItemComponent>; //Danh Sách là các component con đang view. Để có thể duyệt mảng component
 
   constructor() { }
 
@@ -31,7 +31,7 @@ export class BookingBusComponent implements OnInit {
 }
   deleteSeat(soGhe:number){
     this.bookingList = this.bookingList.filter(Item => Item.SoGhe !== soGhe)
-    this.lsSeatItem.forEach(seatItemComp =>{
+    this.lsSeatItem.forEach(seatItemComp =>{ //Duyệt mảng các componet để tìm ra component nào có chứa số ghế đúng để đưa isbooking về false. lúc xoá ghế.
       if(seatItemComp.seatitem.SoGhe ===soGhe){
         seatItemComp.isBooking = false
       }

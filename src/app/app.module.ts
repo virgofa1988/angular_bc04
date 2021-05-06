@@ -17,7 +17,8 @@ import { Baitap7DirectiveComponent } from './baitap7-directive/baitap7-directive
 import { BaitapStudentListComponent } from './baitap-student-list/baitap-student-list.component';
 import { BaitapStudentItemComponent } from './baitap-student-item/baitap-student-item.component';
 import { BookingBusComponent } from './BaiTapGhe/booking-bus/booking-bus.component';
-import { SeatItemComponent } from './BaiTapGhe/seat-item/seat-item.component'
+import { SeatItemComponent } from './BaiTapGhe/seat-item/seat-item.component';
+import { BaitapwebbanhangComponent } from './baitapwebbanhang/baitapwebbanhang.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SeatItemComponent } from './BaiTapGhe/seat-item/seat-item.component'
     BaitapStudentListComponent,
     BaitapStudentItemComponent,
     BookingBusComponent,
-    SeatItemComponent
+    SeatItemComponent,
+    BaitapwebbanhangComponent
   ],
   imports: [
     BrowserModule,
