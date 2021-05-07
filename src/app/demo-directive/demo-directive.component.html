@@ -1,0 +1,122 @@
+<!-- <p>demo-directive works!</p>
+<p *ngIf="isSick; else elseCondition">GO TO CYBERSOFT</p>
+<ng-template #elseCondition>
+  <p>GO TO CYBERCORE</p>
+</ng-template>
+<button (click)="onFeeling(true)">FEEL SICK</button>
+<button (click)="onFeeling(false)">FEEL GOOD</button> -->
+
+<!-- <Select #selectMonth (change)="onChangeMonth(selectMonth.value)" class="=my-5">
+  <option value="0">Pick month</option>
+  <option value="1">January</option>
+  <option value="2">February</option>
+  <option value="3">March</option>
+  <option value="4">April</option>
+</Select> -->
+<!-- <Select [(ngModel)]="month" class="=my-5">
+  <option value="0">Pick month</option>
+  <option value="1">January</option>
+  <option value="2">February</option>
+  <option value="3">March</option>
+  <option value="4">April</option>
+</Select> -->
+
+<!-- <Select [(ngModel)]="month" class="=my-5">
+  <option value="0">Pick month</option>
+  <option *ngFor="let item of monthOptions" [value]="item.value">
+    {{ item.label }}
+  </option>
+</Select>
+<div [ngSwitch]="month">
+  <p *ngSwitchCase="1">January 31 Days</p>
+  <p *ngSwitchCase="2">February 28 Days</p>
+  <p *ngSwitchCase="3">March 31 Days</p>
+  <p *ngSwitchCase="4">April 30 Days</p>
+  <p *ngSwitchDefault>Pick a month</p>
+</div> -->
+<!-- Bài Tập Login - Thay đổi tên username -->
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link active" href="#"
+      >Home <span class="sr-only">(current)</span></a
+    >
+    <a
+      *ngIf="!isLogin; else successLogin"
+      class="nav-item nav-link"
+      href="#"
+      data-toggle="modal"
+      data-target="#modelId"
+      >Login</a
+    >
+    <ng-template #successLogin
+      ><a
+        class="nav-item nav-link"
+        href="#"
+        data-toggle="modal"
+        data-target="#modelId"
+        >{{ userName }}</a
+      >
+    </ng-template>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modelId"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modelTitleId"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">LOGIN</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="">User Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your username"
+            aria-describedby="helpId"
+            [(ngModel)]="userName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Enter your password"
+            aria-describedby="helpId"
+            style="-webkit-text-security: square"
+            [(ngModel)]="password"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="onLogin()">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="isLogin">
+  <p *ngFor="let item of monthOptions">{{ item.label }}</p>
+</ng-container>

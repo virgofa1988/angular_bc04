@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="bg-dark text-white">Quản Lý Danh Mục Sản Phẩm</h1>
+  <input type="text" placeholder="MaSP" [(ngModel)]="maSP" />
+  <input type="text" placeholder="TenSP" [(ngModel)]="tenSP" />
+  <input type="text" placeholder="Gia" [(ngModel)]="giaSP" />
+  <button type="button" (click)="submitInfor()">Submit</button>
+</div>
+<div class="container my-3">
+  <table class="table table-dark table-repsonsive table-striped table-hover">
+    <thead class="text-center">
+      <th>STT</th>
+      <th>Ma SP</th>
+      <th>Ten SP</th>
+      <th>Gia SP</th>
+      <th>Actions</th>
+    </thead>
+    <tbody class="text-center">
+      <tr
+        *ngFor="
+          let sp of productList
+            | paginate: { itemsPerPage: 3, currentPage: page };
+          let i = index
+        "
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ sp.MaSP }}</td>
+        <td>{{ sp.TenSP }}</td>
+        <td>{{ sp.Gia }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteSp(sp.MaSP)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- $event là sự kiện của thư viện pagination ( như 1 hàm) có giá trị trả về là số trang bạn nhấn -->
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

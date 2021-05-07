@@ -1,0 +1,23 @@
+<div class="container-fluid bg-dark text-warning h-auto">
+  <h1 class="display-4 text-center">Student List</h1>
+  <div class="row">
+    <div class="col-8">
+      <h3>List</h3>
+      <div class="row">
+        <div class="col-4 my-2" *ngFor="let item of studentList">
+          <app-baitap-student-item
+            [student]="item"
+            (studentEmiter)="setSelectedStudent($event)"
+          ></app-baitap-student-item>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <h3>Student Detail</h3>
+      <!-- Optional Chaining: Do lúc đàu selectedStudent chưa có giá trị nên bị undefine. Dùng dấu ? để kiểm tra nếu có thì mới .property -->
+      <p>Name: {{ selectedStudent?.name }}</p>
+
+      <p>Age: {{ selectedStudent?.age }}</p>
+    </div>
+  </div>
+</div>
