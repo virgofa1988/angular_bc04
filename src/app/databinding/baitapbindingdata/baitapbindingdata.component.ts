@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BaitapbindingdataComponent implements OnInit {
 
   fullName = "Enter Full Name";
-  email="Enter Email"
-  fullNameInput = "Nguoi Dung Input" 
+  email="Enter Email"  
   constructor() { }
 
   ngOnInit(): void {
